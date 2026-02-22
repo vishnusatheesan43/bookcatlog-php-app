@@ -1,6 +1,7 @@
 services:
   php_fpm:
-    build: .
+    build: 
+       context: app
     restart: always
     ports:
       - 9000:9000
