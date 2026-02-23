@@ -1,6 +1,5 @@
 
 Dockerfile
-httpd
 docker-compose.yml
 Readme.md
 *.yaml

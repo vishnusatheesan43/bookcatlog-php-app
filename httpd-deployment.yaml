@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: httpd-container
-        image: vishnusatheesan/kubernetes:php_fpm_httpd-0.2
+        image: vishnusatheesan/kubernetes:php_fpm_httpd-0.3
         ports:
         - containerPort: 80
         env:
@@ -43,23 +43,3 @@ spec:
               secretKeyRef:
                 name: db-secret
                 key: db-password 
-        
-        volumeMounts:  
-        - name: host-file-source
-          mountPath: /var/www/html/index.php
-          subPath: index.php
-        - name: host-file-source
-          mountPath: /var/www/html/db.php
-          subPath: db.php
-        - name: host-file-source
-          mountPath: /var/www/html/books.php
-          subPath: books.php
-        - name: host-file-source
-          mountPath: /var/www/html/views
-          subPath: views    
-      volumes: 
-      - name: host-file-source
-        hostPath: 
-          path: /data/php-app
-          type: DirectoryOrCreate        
-
